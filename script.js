@@ -25,13 +25,16 @@
         enterBtn.addEventListener('click', () => {
             const userName = document.getElementById('userName').value;
             const userBalance = document.getElementById('userBalance').value;
-
+            const userData = {
+                name : userName,
+                balance : userBalance
+            }
             if (userName.trim() === '' || userBalance.trim() === '') {
                 alert('Please enter both name and balance.');
                 return; 
             }
             
-            localStorage.setItem(userName,userBalance);
+            localStorage.setItem("User-info",JSON.stringify(userData));
             window.location.href = 'expTrack.html'; 
             
         });

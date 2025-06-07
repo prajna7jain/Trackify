@@ -30,8 +30,12 @@
                 alert('Please enter both name and balance.');
                 return; 
             }
-            
-            localStorage.setItem(userName,userBalance);
+
+             const user={
+                userName:userName,
+                userBalance:userBalance
+             }
+            localStorage.setItem('user',JSON.stringify(user));
             window.location.href = 'expTrack.html'; 
             
         });

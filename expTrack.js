@@ -1,2 +1,2 @@
-const user=localStorage.getItem(userName);
-console.log(user);
+const userData=JSON.parse(localStorage.getItem(user));
+console.log(userData);

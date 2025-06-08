@@ -1,41 +1,46 @@
-const user1 = localStorage.getItem("User-info1");
-let useData1 = JSON.parse(user1);
-console.log(useData1.name);
-console.log(useData1.balance);
+let expences = JSON.parse(localStorage.getItem('Expence'))|| [];
 
-document.getElementById("user-name").innerText = useData1.name;
-document.getElementById("user-bal").innerText = useData1.balance;
+const user = localStorage.getItem("User-info");
+let useData = JSON.parse(user);
+console.log(useData.name);
+console.log(useData.balance);
+
+document.getElementById("user-name").innerText = useData.name;
+document.getElementById("user-bal").innerText = useData.balance;
 
 const editBtn = document.getElementById("edit-btn");
 const editSection = document.getElementById("edit-section");
-const addbalBtn = document.getElementById("addbal-btn");
-const editbalBtn = document.getElementById("editbal-btn");
+const addBalBtn = document.getElementById("addbal-btn");
+const editBalBtn = document.getElementById("editbal-btn");
 
 const inputFields = document.getElementById("input-fields-section");
 
 editBtn.addEventListener("click", () => {
   console.log("clicked");
-  inputFields.classList.remove("hidden-section1");
+
+  inputFields.classList.remove("hidden-section");
 });
 
+const addExp = document.getElementById("enter-btn");
 
-let addExp=document.getElementById("add-exp-btn");
-addExp.addEventListener("click",()=>{
-    let expName=document.getElementById("expense-name").value;
-    let expPrice=document.getElementById("expPrice").value;
-    console.log(expName,expPrice);
-    if(expName !="" && expPrice!=""){
-        console.log("amount entered");
-        let updatedbal=document.getElementById("user-bal").innerText = useData1.balance-expPrice;
+addExp.addEventListener("click", () => {
+  let ExpName = document.getElementById("expense-name").value;
+  let ExpPrice = document.getElementById("Expense-price").value;
 
-        const userAmount= {
-                expName : expName,
-                updatedbal: updatedbal
-            }
-            
-            localStorage.setItem("expenses",JSON.stringify(userAmount));
-        
-    }else{
-        alert("Fill all the fields");
+  if (ExpName != "" && ExpPrice != "") {
+    let newBal = useData.balance - ExpPrice;
+    useData.balance = newBal;
+    document.getElementById("user-bal").innerText = newBal;
+    alert(`Expense added: ${ExpName} - ₹${ExpPrice}`);
+    const exp = {
+      item : ExpName,
+      price : ExpPrice
     }
+
+    expences.push(exp);
+    localStorage.setItem("Expence",JSON.stringify(expences));
+  } else {
+    alert("Plese Enter Expences");
+  }
 });
+

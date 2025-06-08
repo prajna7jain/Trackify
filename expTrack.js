@@ -1,10 +1,10 @@
-const user=localStorage.getItem("User-info");
-let useData = JSON.parse(user);
-console.log(useData.name);
-console.log(useData.balance);
+const user1=localStorage.getItem("User-info1");
+let useData1 = JSON.parse(user1);
+console.log(useData1.name);
+console.log(useData1.balance);
 
-document.getElementById('user-name').innerText = useData.name;
-document.getElementById('user-bal').innerText = useData.balance;
+document.getElementById('user-name').innerText = useData1.name;
+document.getElementById('user-bal').innerText = useData1.balance;
 
 
 // const editBtn= document.getElementById('edit-btn');
@@ -20,12 +20,19 @@ document.getElementById('user-bal').innerText = useData.balance;
  
 //         });
 
+userBalance=document.getElementById('user-bal');
 let addExpense=document.getElementById("add-exp-btn");
 addExpense.addEventListener("click",()=>{
+     console.log("clicked");
+     alert("in");
     let expName=document.getElementById("expense-name").value;
     let price=document.getElementById("price2").value;
     if(expName !="" && price!=""){
-        
+         if(price<=user-bal){
+            userBalance=userBalance-price;
+            userBalance.innerText = userBalance;
+
+         }
     }
 
 });

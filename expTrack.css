@@ -108,3 +108,14 @@
 .hidden-section1 {
     display: none; 
 }
+.action-btn1 {
+    background-color: rgb(203, 197, 197);
+    color: rgb(16, 16, 16);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    flex-grow: 1; 
+    border-style: 1px solid;
+    margin: 0 5px; 
+}

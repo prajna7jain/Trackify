@@ -119,10 +119,11 @@ body {
     max-width: 300px; 
     margin-top: 10px;
     
+    
 }
 .action-btn {
 
-    color: white;
+    color: rgb(239, 234, 234);
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;

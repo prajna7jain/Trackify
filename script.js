@@ -12,7 +12,7 @@
             inputFieldsSection.classList.remove('hidden-section');
             inputFieldsSection.classList.add('active-section');
         });
-        
+
 
         clearBtn.addEventListener('click', () => {
             document.getElementById('userName').value = '';
@@ -35,7 +35,7 @@
                 return; 
             }
             
-            localStorage.setItem("User-info",JSON.stringify(userData));
+            localStorage.setItem("User-info1",JSON.stringify(userData));
             window.location.href = 'expTrack.html'; 
             
         });

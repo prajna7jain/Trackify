@@ -26,7 +26,7 @@
     font-size: x-large;
     
 }
-.edit-btn{
+#edit-btn{
     background-color: black;
     color: white; 
     border: 1px solid #e9ecee;
@@ -94,4 +94,17 @@
 #editbal-btn:hover {
     background-color: #036f1d;
     border-color: #f8f0f0;
+}
+.active-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 20px; 
+}
+
+.hidden-section1 {
+    display: none; 
 }

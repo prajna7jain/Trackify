@@ -12,6 +12,7 @@
             inputFieldsSection.classList.remove('hidden-section');
             inputFieldsSection.classList.add('active-section');
         });
+        
 
         clearBtn.addEventListener('click', () => {
             document.getElementById('userName').value = '';

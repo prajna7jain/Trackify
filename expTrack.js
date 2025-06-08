@@ -15,10 +15,12 @@ const editbalBtn = document.getElementById('editbal-btn');
 
  editBtn.addEventListener('click', () => {
     console.log("clicked");
-            addbalBtn.classList.add('hidden-section1');
-            editbalBtn.classList.add('hidden-section1');
+            addbalBtn.classList.add('hidden-section');
+            editbalBtn.classList.add('hidden-section');
  
         });
+      
+
 
 userBalance=document.getElementById('user-bal');
 let addExpense=document.getElementById("add-exp-btn");

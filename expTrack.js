@@ -8,11 +8,20 @@ document.getElementById("user-bal").innerText = useData.balance;
 
 const editBtn = document.getElementById("edit-btn");
 const inputFields = document.getElementById("input-fields-section");
-
 editBtn.addEventListener("click", () => {
-  console.log("clicked");
-  inputFields.classList.remove("hidden-section1");
+  inputFields.classList.remove("hidden-section");
 });
+
+const addbalbtn = document.getElementById("addbal-btn");
+const addbalinput= document.getElementById("add-bal-input");
+addbalbtn.addEventListener("click", () => {
+  addbalinput.classList.remove("hidden-section1");
+});
+
+
+
+
+
 
 let expenses = JSON.parse(localStorage.getItem('Expense'))|| [];
 let addExp=document.getElementById("add-exp-btn");//enter btn
@@ -36,3 +45,5 @@ addExp.addEventListener("click",()=>{
         alert("Please enter expenses");
       }
 });
+
+ 

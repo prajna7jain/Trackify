@@ -66,6 +66,11 @@ body {
     display: none; 
 }
 
+.hidden-section1 {
+    display: none; 
+}
+
+
 
 /* Styling for input groups */
 

@@ -9,27 +9,34 @@
   </head>
   <body>
     <div class="container">
-      <div class="hedername">
+      <!-------Head Section---->
+
+      <div class="headername">
         <img src="logo.jpg" alt="logo" height="80px" width="80px" />
         <h1>Trackify</h1>
       </div>
       <div class="my-line"></div>
+
       <section>
+        <!-----Profile-->
         <div class="profile">
           <img src="logo.jpg" alt="logo" height="30px" width="30px" />
           <h2 id="user-name"></h2>
         </div>
 
+        <!----User Balance--->
         <div class="user-bal-style">
           <h3>Balance :</h3>
           <h3 id="user-bal">Balance :</h3>
         </div>
 
-        <div id="edit-section" class="active-section">
-          <button id="edit-btn" class="edit-btn">Edit</button>
-        </div>
+        <!-----Balance-Edit-Section-->
+        <section id="edit-section" class="active-section1">
+          <button id="edit-btn">Edit</button>
+        </section>
 
-        <section id="input-fields-section" class="hidden-section">
+        <!-----Edite-TWO-Btns--->
+        <section id="input-fields-section" class="hidden-section1">
           <div class="button-group">
             <button id="addbal-btn" class="action-btn">Add Balance</button>
             <button id="editbal-btn" class="action-btn">Edit Balance</button>
@@ -43,15 +50,16 @@
               placeholder="Enter amount"
               step="0.01"
             />
-            <button class="add-bal-btn">ADD</button>
+            <button id="add-bal-btn" class="addbtn">ADD</button>
           </div>
         </section>
 
-        <section id="expense-section">
+        <!----Expense Tracker section-->
+        <div id="expense-section">
           <center><h2>Expense tracker</h2></center>
-        </section>
+        </div>
 
-        <section id="input-buttons" class="hidden-section1">
+        <section id="input-buttons">
           <div class="input-group">
             <label for="expense-name"></label>
             <input
@@ -65,13 +73,14 @@
             <label for="price"></label>
             <input
               type="number"
-              id="Expense-price"
+              id="expPrice"
               placeholder="Enter amount"
+              step="0.01"
             />
           </div>
 
           <div class="button-group">
-            <button id="enter-btn" class="action-btn">Add Expense</button>
+            <button id="add-exp-btn" class="action-btn1">Add Expense</button>
           </div>
         </section>
       </section>

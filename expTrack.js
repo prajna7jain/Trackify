@@ -15,10 +15,6 @@ const inputFields = document.getElementById("input-fields-section");
 
 editBtn.addEventListener("click", () => {
   console.log("clicked");
-//   Remove Madu edanna 
-  addBalBtn.classList.add("hidden-section");
-  editBalBtn.classList.add("hidden-section");
   
-//   E line aa add madu 
-// inputFields.classList.remove("hidden-section");
+inputFields.classList.remove("hidden-section1");
 });

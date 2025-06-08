@@ -14,22 +14,24 @@ editBtn.addEventListener("click", () => {
   inputFields.classList.remove("hidden-section1");
 });
 
+let expenses = JSON.parse(localStorage.getItem('Expense'))|| [];
 let addExp=document.getElementById("add-exp-btn");//enter btn
-let expName=document.getElementById("expense-name").value;
-let expPrice=document.getElementById("expPrice").value;
+
 addExp.addEventListener("click",()=>{
+    let expName=document.getElementById("expense-name").value;
+    let expPrice=document.getElementById("expPrice").value;
     if(expName !=''&& expPrice!=''){
         let newBal = useData.balance - expPrice;
          useData.balance = newBal;
         document.getElementById("user-bal").innerText = newBal;
-         alert(`Expense added: ${ExpName} - ₹${ExpPrice}`);
+         alert(`Expense added: ${expName} - ₹${expPrice}`);
 
         const exp = {
               item : expName,
               price : expPrice
           }
           expenses.push(exp);
-         localStorage.setItem("Expense",JSON.stringify(expences));
+         localStorage.setItem("Expense",JSON.stringify(expenses));
             }else{
         alert("Please enter expenses");
       }

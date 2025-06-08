@@ -1,90 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
-     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="expTrack.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="expTrack.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-------Head Section----> 
+      <!-------Head Section---->
 
+      <div class="headername">
+        <img src="logo.jpg" alt="logo" height="80px" width="80px" />
+        <h1>Trackify</h1>
+      </div>
+      <div class="my-line"></div>
 
-        <div class="headername">
-            <img src="logo.jpg" alt="logo" height="80px" width="80px"/>
-            <h1>Trackify</h1>
+      <section>
+        <!-----Profile-->
+        <div class="profile">
+          <img src="logo.jpg" alt="logo" height="30px" width="30px" />
+          <h2 id="user-name"></h2>
         </div>
-        <div class="my-line"></div>
 
+        <!----User Balance--->
+        <div class="user-bal-style">
+          <h3>Balance :</h3>
+          <h3 id="user-bal">Balance :</h3>
+        </div>
 
+        <!-----Balance-Edit-Section-->
+        <section id="edit-section" class="active-section1">
+          <button id="edit-btn">Edit</button>
+        </section>
 
-        <section>
-               <!-----Profile-->
-            <div  class="profile">
-             <img src="logo.jpg" alt="logo" height="30px" width="30px"/>
-             <h2 id="user-name"></h2>
-            </div>
-
-
-             <!----User Balance--->
-           <div class="user-bal-style">
-            <h3>Balance :</h3>
-            <h3 id="user-bal">Balance :</h3>
+        <!-----Edite-TWO-Btns--->
+        <section id="input-fields-section" class="hidden-section1">
+          <div class="button-group">
+            <button id="addbal-btn" class="action-btn">Add Balance</button>
+            <button id="editbal-btn" class="action-btn">Edit Balance</button>
           </div>
 
-
-            <!-----Balance-Edit-Section-->
-        <section id="edit-section" class="active-section1">     
-          <button id="edit-btn">Edit</button>
-        </section> 
-           
-
-                <!-----Edite-TWO-Btns--->
-          <section id="input-fields-section"  >
-             <div class="button-group" >
-                <button id="addbal-btn" class="action-btn">Add Balance</button>
-                <button id="editbal-btn" class="action-btn">Edit Balance</button>
-             </div> 
-               
-            <div  class="add-bal-input">
-                <label for="price"></label>
-                <input type="number" id="price" placeholder="Enter amount" step="0.01">
-                <button id="add-bal-btn" class="addbtn">ADD</button>
-            </div>  
-    
-         </section>
-        
-
-                      <!----Expense Tracker section-->
-             <div id="expense-section"><center><h2>Expense tracker</h2></center></div>
-
-           <section id="input-buttons" >
-            <div class="input-group">
-                <label for="expense-name"></label>
-                <input type="text" id="expense-name" placeholder="Enter expense name">
-            </div>
-              
-            <div class="input-group">
-                <label for="price"></label>
-                <input type="number" id="price2" placeholder="Enter amount" step="0.01">
-            </div>
-
-            <div class="button-group"> 
-                <button id="add-exp-btn" class="action-btn1">Add Expense</button>
-            </div>
-            
-                 
-        </section> 
-
-
-
-
-
-
-              
+          <div class="add-bal-input">
+            <label for="price"></label>
+            <input
+              type="number"
+              id="price"
+              placeholder="Enter amount"
+              step="0.01"
+            />
+            <button id="add-bal-btn" class="addbtn">ADD</button>
+          </div>
         </section>
-    </div> <script src="expTrack.js"></script>
-</body>
+
+        <!----Expense Tracker section-->
+        <div id="expense-section">
+          <center><h2>Expense tracker</h2></center>
+        </div>
+
+        <section id="input-buttons">
+          <div class="input-group">
+            <label for="expense-name"></label>
+            <input
+              type="text"
+              id="expense-name"
+              placeholder="Enter expense name"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="price"></label>
+            <input
+              type="number"
+              id="price2"
+              placeholder="Enter amount"
+              step="0.01"
+            />
+          </div>
+
+          <div class="button-group">
+            <button id="add-exp-btn" class="action-btn1">Add Expense</button>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="expTrack.js"></script>
+  </body>
 </html>

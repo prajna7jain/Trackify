@@ -38,8 +38,8 @@
     margin: 10px 0px 20px 250px;
 }
 
-.add-bal-btn{
-    background-color: black;
+#add-bal-btn{
+    background-color: rgb(12, 12, 12);
     color: white; 
     border: 1px solid #e9ecee;
     width: 90px;

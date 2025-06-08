@@ -17,3 +17,25 @@ editBtn.addEventListener("click", () => {
   console.log("clicked");
   inputFields.classList.remove("hidden-section1");
 });
+
+
+let addExp=document.getElementById("add-exp-btn");
+addExp.addEventListener("click",()=>{
+    let expName=document.getElementById("expense-name").value;
+    let expPrice=document.getElementById("expPrice").value;
+    console.log(expName,expPrice);
+    if(expName !="" && expPrice!=""){
+        console.log("amount entered");
+        let updatedbal=document.getElementById("user-bal").innerText = useData1.balance-expPrice;
+
+        const userAmount= {
+                expName : expName,
+                updatedbal: updatedbal
+            }
+            
+            localStorage.setItem("expenses",JSON.stringify(userAmount));
+        
+    }else{
+        alert("Fill all the fields");
+    }
+});

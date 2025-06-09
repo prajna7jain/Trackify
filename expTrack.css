@@ -137,6 +137,7 @@
     flex-grow: 1; 
     border-style: 1px solid;
     margin: 0 5px; 
+    margin-top: 5px;
 }
 .addbtn{
     background-color: rgb(12, 12, 12);

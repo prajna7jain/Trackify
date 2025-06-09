@@ -49,7 +49,7 @@ const addb = document.getElementById("addb");
   });
   
 
-
+//update balance
 const updatebtn= document.getElementById("newbtn");
 
   updatebtn.addEventListener("click", () => {
@@ -63,7 +63,7 @@ const updatebtn= document.getElementById("newbtn");
       alert("Enter a valid amount!");
     }
   });
-
+//add expenses
 let expenses = JSON.parse(localStorage.getItem('Expense'))|| [];
 let addExp=document.getElementById("add-exp-btn");//enter btn
 
@@ -75,67 +75,79 @@ addExp.addEventListener("click",()=>{
          useData.balance = newBal;
         document.getElementById("user-bal").innerText = newBal;
         localStorage.setItem("User-info", JSON.stringify(useData)); 
-         alert(`Expense added: ${expName} - ₹${expPrice}`);
-
         const exp = {
               item : expName,
               price : expPrice
           }
           expenses.push(exp);
          localStorage.setItem("Expense",JSON.stringify(expenses));
+          displayExpenses();
             }else{
         alert("Please enter expenses");
       }
-      let showExpense = JSON.parse(localStorage.getItem("Expense"))|| [];
+      
    
 });
+  //expenses tracker
 
-if (showExpense.length > 0) {
-  document.getElementById("showItem").innerText = showExpense.map(exp => exp.item).join(", ");
-  document.getElementById("showPrice").innerText = showExpense.map(exp => exp.price).join(", ");
-} else {
-  document.getElementById("showItem").innerText = "No expenses found";
-  document.getElementById("showPrice").innerText = "";
+function displayExpenses() {
+  let showExpense = JSON.parse(localStorage.getItem("Expense")) || [];
+  let expenseList = document.getElementById("showItem");
+
+  expenseList.innerHTML = "";
+
+  if (showExpense.length > 0) {
+    showExpense.forEach((exp, index) => {
+      let expenseDiv = document.createElement("div");
+      expenseDiv.style.display = "flex";
+      expenseDiv.style.alignItems = "center";
+      expenseDiv.style.justifyContent = "space-between";
+      expenseDiv.style.padding = "10px";
+      expenseDiv.style.marginTop = "13px";
+      expenseDiv.style.borderBottom = "1px solid #ccc"; 
+
+      // Expense name 
+      let label = document.createElement("span");
+      label.innerText = exp.item;
+      label.style.fontSize = "18px";
+      label.style.fontWeight = "bold";
+
+      // Expense price 
+      let priceSpan = document.createElement("span");
+      priceSpan.innerText = `₹${exp.price}`;
+      priceSpan.style.fontSize = "16px";
+      priceSpan.style.margin = "0 20px";
+      priceSpan.style.color = "green";
+
+      // delete button 
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.style.borderRadius = "8px";
+      deleteBtn.style.padding = "8px 16px";
+      deleteBtn.style.fontSize = "14px";
+      deleteBtn.style.backgroundColor = "black"; 
+      deleteBtn.style.color = "white";
+      deleteBtn.style.border = "2px solid";
+      deleteBtn.style.cursor = "pointer";
+      deleteBtn.style.marginLeft = "20px";
+
+      // Delete expense logic 
+      deleteBtn.onclick = function () {
+        showExpense.splice(index, 1);
+        localStorage.setItem("Expense", JSON.stringify(showExpense)); 
+        displayExpenses(); 
+      };
+
+      // Append elements to expenseDiv
+      expenseDiv.appendChild(label);
+      expenseDiv.appendChild(priceSpan);
+      expenseDiv.appendChild(deleteBtn);
+
+      // Append to main container
+      expenseList.appendChild(expenseDiv);
+    });
+  } else {
+    expenseList.innerText = "No expenses found";
+  }
 }
-   
-
-
-// let showExpense = JSON.parse(localStorage.getItem("Expense"))|| [];
-// let expenseList = document.getElementById("showItem");
-// if (showExpense.length > 0) {
-//   showExpense.forEach((exp, index) => {
-//     let expenseDiv = document.createElement("div");
-//     let checkbox = document.createElement("input");
-//     checkbox.type = "checkbox";
-//     checkbox.id = `exp-${index}`;
-//     checkbox.value = exp.item;
-
-//     // Create label for checkbox
-//     let label = document.createElement("label");
-//     label.htmlFor = `exp-${index}`;
-//     label.innerText = `${exp.item} - ₹${exp.price}`;
-
-//     // Create delete button
-//     let deleteBtn = document.createElement("button");
-//     deleteBtn.innerText = "Delete";
-//     deleteBtn.style.marginLeft = "20px"; // Add spacing
-//     deleteBtn.onclick = function () {
-//       // Remove from array
-//       showExpense.splice(index, 1);
-//       localStorage.setItem("Expense", JSON.stringify(showExpense));
-      
-//       // Refresh the expense list
-//       location.reload();
-//     };
-
-//     // Append elements to expenseDiv
-//     expenseDiv.appendChild(checkbox);
-//     expenseDiv.appendChild(label);
-//     expenseDiv.appendChild(deleteBtn);
-
-//     // Append expenseDiv to the main container
-//     expenseList.appendChild(expenseDiv);
-//   });
-// } else {
-//   expenseList.innerText = "No expenses found";
-// }
+window.onload = displayExpenses;

@@ -41,7 +41,7 @@ const addb = document.getElementById("addb");
   addb.addEventListener("click", () => {
     let addbalance = parseFloat(document.getElementById("price").value);
 
-    if (addbalance!='' && addbalance > 0) {
+    if (!isNaN(addbalance) && addbalance > 0) {
       let newBal = useData.balance + addbalance;
       useData.balance = newBal;
       document.getElementById("user-bal").innerText = newBal;
@@ -83,6 +83,7 @@ addExp.addEventListener("click",()=>{
         let newBal = useData.balance - expPrice;
          useData.balance = newBal;
         document.getElementById("user-bal").innerText = newBal;
+        localStorage.setItem("User-info", JSON.stringify(useData)); 
          alert(`Expense added: ${expName} - ₹${expPrice}`);
 
         const exp = {

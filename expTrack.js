@@ -79,7 +79,7 @@ let addExp=document.getElementById("add-exp-btn");//enter btn
 addExp.addEventListener("click",()=>{
     let expName=document.getElementById("expense-name").value;
     let expPrice=document.getElementById("expPrice").value;
-    if(expName !=''&& expPrice!=''){
+    if(expName !=''&& expPrice!='' && expPrice >0){
         let newBal = useData.balance - expPrice;
          useData.balance = newBal;
         document.getElementById("user-bal").innerText = newBal;

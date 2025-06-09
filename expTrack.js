@@ -10,13 +10,57 @@ const editBtn = document.getElementById("edit-btn");
 const inputFields = document.getElementById("input-fields-section");
 editBtn.addEventListener("click", () => {
   inputFields.classList.remove("hidden-section");
+
 });
 
 const addbalbtn = document.getElementById("addbal-btn");
-const addbalinput= document.getElementById("add-bal-input");
+const addbalinput = document.getElementById("add-bal-input");
+
 addbalbtn.addEventListener("click", () => {
-  addbalinput.classList.remove("hidden-section1");
+  addbalinput.classList.toggle("hidden-section1");
 });
+
+//new balance edit
+const newbalbtn = document.getElementById("new-bal-btn");
+const newbalinput = document.getElementById("new-bal-input");
+
+newbalbtn.addEventListener("click", () => {
+  newbalinput.classList.toggle("hidden-section2");
+});
+
+//add balance
+
+
+const addb = document.getElementById("addb");
+
+  addb.addEventListener("click", () => {
+    let addbalance = parseFloat(document.getElementById("price").value);
+
+    if (addbalance!='' && addbalance > 0) {
+      let newBal = useData.balance + addbalance;
+      useData.balance = newBal;
+      document.getElementById("user-bal").innerText = newBal;
+      localStorage.setItem("User-info", JSON.stringify(useData)); 
+      alert(`Balance added: ₹${addbalance}`);
+    } else {
+      alert("Enter a valid amount!");
+    }
+  });
+
+const updatebtn= document.getElementById("new-bal-btn");
+
+  updatebtn.addEventListener("click", () => {
+    let updatebalbalance = parseFloat(document.getElementById("price2").value);
+
+    if (updatebalbalance!='' && updatebalbalance > 0) {
+       useData.balance = updatebalbalance;
+      document.getElementById("user-bal").innerText = useData.balance ;
+      localStorage.setItem("User-info", JSON.stringify(useData)); 
+      alert(`Balance updated: ₹${updatebalbalance }`);
+    } else {
+      alert("Enter a valid amount!");
+    }
+  });
 
 
 

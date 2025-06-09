@@ -69,7 +69,7 @@ let addExp=document.getElementById("add-exp-btn");//enter btn
 
 addExp.addEventListener("click",()=>{
     let expName=document.getElementById("expense-name").value;
-    let expPrice= JSON.parseFloat(document.getElementById("expPrice").value);
+    let expPrice= document.getElementById("expPrice").value;
     if(expName !=''&& expPrice!='' && expPrice >0){
         let newBal = useData.balance - expPrice;
          useData.balance = newBal;
@@ -87,6 +87,8 @@ addExp.addEventListener("click",()=>{
         alert("Please enter expenses");
       }
       let showExpense = JSON.parse(localStorage.getItem("Expense"))|| [];
+   
+});
 
 if (showExpense.length > 0) {
   document.getElementById("showItem").innerText = showExpense.map(exp => exp.item).join(", ");
@@ -95,8 +97,7 @@ if (showExpense.length > 0) {
   document.getElementById("showItem").innerText = "No expenses found";
   document.getElementById("showPrice").innerText = "";
 }
-      
-});
+   
 
 
 // let showExpense = JSON.parse(localStorage.getItem("Expense"))|| [];

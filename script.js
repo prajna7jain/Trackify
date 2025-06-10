@@ -13,6 +13,7 @@
             inputFieldsSection.classList.add('active-section');
         });
 
+
         clearBtn.addEventListener('click', () => {
             document.getElementById('userName').value = '';
             document.getElementById('userBalance').value = '';

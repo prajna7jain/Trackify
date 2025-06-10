@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px; 
+    margin-left: 2px;
+    gap: 10px; 
+    
+}
+.user-bal-style{
+    display: flex;
+    gap: 20px;
+    background-color: black;
+    color: white; 
+    font-size: 1em;
+    border-radius: 8px;
+    border: white;
+    border-width: 2px ;
+    border-style: solid;
+    margin: 8px;
+    padding: 30px;
+    font-size: x-large;
+    
+}
+#edit-btn{
+    background-color: black;
+    color: white; 
+    border: 1px solid #e9ecee;
+    width: 70px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;
+    margin: 10px 0px 20px 250px;
+}
+
+#add-bal-btn{
+    background-color: rgb(12, 12, 12);
+    color: white; 
+    border: 1px solid #e9ecee;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;
+      
+}
+
+#new-bal-input{
+     margin-top: 20px;
+    display: flex;
+    flex-direction: row;  
+    gap: 5px;  
+}
+#new-bal-input input[type="number"] {
+    width: 80%; 
+    max-width: 300px; 
+    padding: 12px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 1em;
+    outline: none;
+}  
+
+
+#add-bal-input {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;  
+    gap: 5px;  
+}
+
+#add-bal-input label {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#add-bal-input input[type="number"] {
+    width: 80%; 
+    max-width: 300px; 
+    padding: 12px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 1em;
+    outline: none;
+}
+#expense-section{
+    margin-top: 30px;
+}
+
+#addbal-btn {
+ background-color: #100f0f; 
+    border-color: #f8f0f0;
+}
+
+#addbal-btn:hover {
+    background-color: #036f1d;
+    border-color: #f8f0f0;
+}
+#editbal-btn {
+ background-color: #100f0f; 
+    border-color: #f8f0f0;
+}
+
+#editbal-btn:hover {
+    background-color: #036f1d;
+    border-color: #f8f0f0;
+}
+.active-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 20px; 
+}
+
+.hidden-section1 {
+    display: none; 
+}
+.action-btn1 {
+    background-color: rgb(203, 197, 197);
+    color: rgb(16, 16, 16);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    flex-grow: 1; 
+    border-style: 1px solid;
+    margin: 0 5px; 
+    margin-top: 5px;
+}
+.addbtn{
+    background-color: rgb(12, 12, 12);
+    color: white; 
+    border: 1px solid #e9ecee;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;   
+}
+.back-home-img {
+    width: 50px; 
+    height: 50px; 
+    cursor: pointer; 
+    margin-right: 320px;
+
+}
+
+
+.back-home-btn:hover {
+    background-color: #435161;
+}

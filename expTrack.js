@@ -135,7 +135,9 @@ function displayExpenses() {
       deleteBtn.onclick = function () {
         showExpense.splice(index, 1);
         localStorage.setItem("Expense", JSON.stringify(showExpense)); 
+        expenses = showExpense;
         displayExpenses(); 
+    
       };
 
       // Append elements to expenseDiv

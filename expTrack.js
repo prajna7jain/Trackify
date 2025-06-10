@@ -65,7 +65,7 @@ const updatebtn= document.getElementById("newbtn");
   });
 //add expenses
 let expenses = JSON.parse(localStorage.getItem('Expense'))|| [];
-let addExp=document.getElementById("add-exp-btn");//enter btn
+let addExp=document.getElementById("add-exp-btn");
 
 addExp.addEventListener("click",()=>{
     let expName=document.getElementById("expense-name").value;

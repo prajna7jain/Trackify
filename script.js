@@ -39,3 +39,11 @@
             window.location.href = 'expTrack.html'; 
             
         });
+         document.addEventListener("DOMContentLoaded", () => {
+    const storedData = JSON.parse(localStorage.getItem("User-info"));
+    if (storedData) {
+      document.getElementById("userName").value = storedData.name || '';
+      document.getElementById("userBalance").value = storedData.balance || '';
+    }
+  });
+
